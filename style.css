@@ -704,7 +704,7 @@ font-size:17px;
   position:relative;
   top:10px;
     left:70px;
-  font-size:12px;      /* تصغير الخط */
+  font-size:10px;      /* تصغير الخط */
     padding:6px 18px;    /* تصغير المساحة الداخلية */
     letter-spacing:1px;  /* تقليل تباعد الحروف */
 }
@@ -720,6 +720,7 @@ font-size:17px;
 
 
 </style>
+
 
 
 

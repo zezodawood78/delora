@@ -53,7 +53,7 @@ position: relative; z-index: 2500;
 .logo{
 justify-self:center;
 font-family:'Playfair Display',serif;
-font-size:10px;
+font-size:18px;
 color:#C9A227;
 letter-spacing:4px;
 position:relative;
@@ -720,4 +720,5 @@ font-size:17px;
 
 
 </style>
+
 

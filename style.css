@@ -685,7 +685,20 @@ font-size:17px;
 }
 @media(max-width:768px){
 
+.flash-container{
+  justify-content:center;   /* يخليهم في النص */
+  text-align:center;
+}
 
+.flash-timer{
+  justify-content:center;
+  margin:0 auto;
+}
+
+.flash-timer{
+  position:relative;
+  left:-8px;   /* عدل الرقم حسب ما يعجبك */
+}
   .buttons{
     flex-direction:column;
     align-items:center;

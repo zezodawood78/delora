@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Payment — DELORA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0a0a0a;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:40px;
+}
+
+/* Navbar */
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+z-index:1000;
+border-bottom:1px solid #222;
+}
+
+.nav-logo{
+font-family:'Playfair Display',serif;
+color:#C9A227;
+font-size:22px;
+letter-spacing:4px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#aaa;
+font-size:13px;
+letter-spacing:2px;
+padding:8px 14px;
+border-radius:20px;
+transition:.3s;
+}
+
+.nav-links a:hover{
+background:#C9A227;
+color:#000;
+}
+
+/* Payment Box */
+.payment-box{
+background:#111;
+padding:35px;
+border-radius:18px;
+width:100%;
+max-width:550px;
+margin-top:60px;
+}
+
+h2{
+font-family:'Playfair Display',serif;
+text-align:center;
+margin-bottom:25px;
+}
+
+.price-box{
+display:block;
+text-align:center;
+padding:12px;
+background:#0a9300;
+color:#000;
+font-weight:600;
+border-radius:10px;
+font-size:18px;
+margin-bottom:25px;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #222;
+background:#0a0a0a;
+color:#fff;
+outline:none;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#aa780b;
+border:none;
+color:#000;
+font-weight:600;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+margin-top:10px;
+}
+
+button:hover{
+opacity:.9;
+}
+
+@keyframes spinBank{
+from{
+transform:rotate(0deg);
+}
+to{
+transform:rotate(360deg);
+}
+}
+
+@media(max-width:768px){
+
+/* تصغير شاشة التحميل نفسها */
+div[style*="radial-gradient"] > div{
+padding:40px !important;
+max-width:90% !important;
+}
+
+/* تصغير الدائرة */
+div[style*="border-top:4px solid #C9A227"]{
+width:60px !important;
+height:60px !important;
+}
+
+/* تصغير العنوان */
+div[style*="font-family:Playfair Display"]{
+font-size:18px !important;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="nav-logo">DELORA</div>
+<div class="nav-links">
+<a href="index.html">HOME</a>
+</div>
+</div>
+
+<div class="payment-box">
+
+<h2>Secure Card Payment</h2>
+
+<div class="price-box" id="priceDisplay">
+$0
+</div>
+
+<input type="text" id="cardName" placeholder="Card Holder Name">
+<input type="text" id="cardNumber" placeholder="Card Number">
+<input type="text" id="expiry" placeholder="MM/YY">
+<input type="text" id="cvv" placeholder="CVV">
+
+<button onclick="payNow()">Pay Now</button>
+
+</div>
+
+<script>
+
+/* ===== جلب السعر ===== */
+
+const params = new URLSearchParams(window.location.search);
+const price = params.get("price");
+
+if(price){
+document.getElementById("priceDisplay").innerText = "$" + price;
+}
+
+
+/* ===== شاشة البنك الاحترافية ===== */
+
+function bankScreen(title,msg){
+
+let screen = document.createElement("div");
+
+screen.style.position="fixed";
+screen.style.top="0";
+screen.style.left="0";
+screen.style.width="100%";
+screen.style.height="100%";
+screen.style.background="radial-gradient(circle at center,#050a1a,#000)";
+screen.style.display="flex";
+screen.style.justifyContent="center";
+screen.style.alignItems="center";
+screen.style.zIndex="999999";
+
+screen.innerHTML=`
+<div style="
+background:#0b0f1a;
+padding:70px;
+border-radius:35px;
+text-align:center;
+border:1px solid #1a1f33;
+box-shadow:0 0 120px rgba(0,0,0,.9);
+">
+
+<h2 style="
+color:#C9A227;
+font-family:Playfair Display,serif;
+margin-bottom:25px;
+">${title}</h2>
+
+<div style="
+width:80px;
+height:80px;
+border-radius:50%;
+border:4px solid #222;
+border-top:4px solid #C9A227;
+animation:spinBank 1s linear infinite;
+margin:auto;
+"></div>
+
+<p style="margin-top:25px;color:#888">${msg}</p>
+
+</div>
+`;
+
+document.body.appendChild(screen);
+
+return screen;
+}
+
+
+/* ===== الدفع ===== */
+
+function payNow(){
+
+let name=document.getElementById("cardName").value.trim();
+let number=document.getElementById("cardNumber").value.trim();
+let expiry=document.getElementById("expiry").value.trim();
+let cvv=document.getElementById("cvv").value.trim();
+
+let btn=document.querySelector("button");
+
+btn.disabled=true;
+btn.innerText="Connecting to Bank Network...";
+
+let screen = bankScreen(
+"DELORA BANK SECURITY",
+"Connecting to global payment network..."
+);
+
+
+/* Step 1 */
+
+setTimeout(()=>{
+
+screen.querySelector("p").innerText=
+"Encrypting Card Data Using 512-bit Security";
+
+},1800);
+
+
+/* Step 2 Validation */
+
+setTimeout(()=>{
+
+let cardValid =
+number.length===16 && !isNaN(number);
+
+let cvvValid =
+cvv.length===3 && !isNaN(cvv);
+
+let expiryValid =
+expiry.match(/^(0[1-9]|1[0-2])\/\d{2}$/);
+
+
+/* SUCCESS */
+
+if(name && cardValid && cvvValid && expiryValid){
+
+screen.querySelector("h2").innerText="✅ Payment Approved";
+screen.querySelector("p").innerText="Transaction Signed By Bank";
+
+setTimeout(()=>{
+
+screen.querySelector("h2").innerText="💰 Order Completed";
+screen.querySelector("p").innerText="Redirecting to Home...";
+
+setTimeout(()=>{
+window.location.href="index.html";
+},2500);
+
+},2000);
+
+
+/* FAILED */
+
+}else{
+
+screen.querySelector("h2").innerText="❌ Payment Declined";
+screen.querySelector("p").innerText="Bank security rejected card";
+
+setTimeout(()=>{
+screen.remove();
+btn.disabled=false;
+btn.innerText="Pay Now";
+},2500);
+
+}
+
+},3000);
+
+}
+
+</script>
+
+</body>
+</html>

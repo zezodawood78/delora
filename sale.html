@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hot Sale — DELORA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Inter',sans-serif;
+background:#0a0a0a;
+color:#fff;
+}
+
+/* Navbar */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 80px;
+background:#000;
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:24px;
+color:#C9A227;
+letter-spacing:4px;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#aaa;
+font-size:13px;
+letter-spacing:2px;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#ff2e2e;
+}
+
+/* Hero */
+.sale-hero{
+padding:120px 80px 60px;
+text-align:center;
+background:linear-gradient(90deg,#220404,#000);
+}
+
+.sale-hero h1{
+font-family:'Playfair Display',serif;
+font-size:60px;
+color:#ff2e2e;
+}
+
+.sale-hero span{
+color:#C9A227;
+}
+
+.sale-hero p{
+color:#bbb;
+margin-top:15px;
+}
+
+/* Countdown */
+.countdown{
+margin-top:30px;
+font-size:22px;
+color:#C9A227;
+}
+
+/* Products */
+.products{
+padding:60px 80px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+.card{
+background:#111;
+padding:20px;
+border-radius:12px;
+position:relative;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,.6);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.badge-sale{
+position:absolute;
+top:15px;
+left:15px;
+background:#ff2e2e;
+color:#fff;
+font-size:11px;
+padding:6px 12px;
+letter-spacing:2px;
+font-weight:600;
+}
+
+.old-price{
+text-decoration:line-through;
+color:#666;
+font-size:14px;
+}
+
+.price{
+color:#C9A227;
+font-size:20px;
+margin:10px 0;
+}
+
+.save{
+color:#00ff6a;
+font-size:14px;
+margin-bottom:10px;
+}
+
+.stock{
+color:#ff4d4d;
+font-size:13px;
+margin-bottom:10px;
+}
+
+.add-btn{
+width:100%;
+background:#ff2e2e;
+color:#fff;
+border:none;
+padding:12px;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+}
+
+.add-btn:hover{
+background:#ff4444;
+}
+
+/* Footer */
+.footer{
+background:#000;
+padding:40px;
+text-align:center;
+border-top:1px solid #222;
+margin-top:80px;
+}
+
+.footer-logo{
+font-family:'Playfair Display',serif;
+color:#C9A227;
+font-size:22px;
+letter-spacing:4px;
+margin-bottom:10px;
+}
+
+.footer p{
+color:#777;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="logo">DELORA</div>
+  <div class="nav-links">
+    <a href="index.html">HOME</a>
+ 
+  </div>
+</div>
+
+<section class="sale-hero">
+  <h1>HOT <span>SALE</span></h1>
+  <p>Massive discounts. Limited time only.</p>
+  <div class="countdown" id="countdown"></div>
+</section>
+
+<section class="products">
+  <div class="grid">
+
+    <div class="card">
+      <div class="badge-sale">-60%</div>
+      <img src="2.jpg">
+      <h3>Midnight Jacket</h3>
+      <div class="old-price">$349</div>
+      <div class="price">$139</div>
+      <div class="save">You save $210 🎉</div>
+      <div class="stock">Only 2 left!</div>
+      <button class="add-btn">Add To Cart</button>
+    </div>
+
+    <div class="card">
+      <div class="badge-sale">-55%</div>
+      <img src="3.jpg">
+      <h3>Shadow Hoodie</h3>
+      <div class="old-price">$249</div>
+      <div class="price">$109</div>
+      <div class="save">You save $140 🎉</div>
+      <div class="stock">Only 4 left!</div>
+      <button class="add-btn">Add To Cart</button>
+    </div>
+
+    <div class="card">
+      <div class="badge-sale">-50%</div>
+      <img src="4.jpg">
+      <h3>Urban Pants</h3>
+      <div class="old-price">$199</div>
+      <div class="price">$99</div>
+      <div class="save">You save $100 🎉</div>
+      <div class="stock">Only 3 left!</div>
+      <button class="add-btn">Add To Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="footer">
+  <div class="footer-logo">DELORA</div>
+  <p>© 2026 DELORA. All Rights Reserved.</p>
+</div>
+
+<script>
+// Countdown 6 hours
+let end = new Date().getTime() + 21600000;
+
+setInterval(()=>{
+  let now = new Date().getTime();
+  let diff = end - now;
+
+  let h = Math.floor(diff / (1000*60*60));
+  let m = Math.floor((diff % (1000*60*60)) / (1000*60));
+  let s = Math.floor((diff % (1000*60)) / 1000);
+
+  document.getElementById("countdown").innerText =
+  h + "h " + m + "m " + s + "s ";
+},1000);
+</script>
+
+</body>
+</html>

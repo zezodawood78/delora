@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — DELORA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0a0a0a;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:40px;
+}
+
+
+.checkout-box{
+background:#111;
+padding:35px;
+border-radius:18px;
+width:100%;
+max-width:550px;
+}
+
+h2{
+font-family:'Playfair Display',serif;
+text-align:center;
+margin-bottom:25px;
+}
+
+/* Product Images */
+.product-images{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-bottom:25px;
+}
+
+.product-images img{
+width:100%;
+border-radius:12px;
+}
+
+/* Form Inputs */
+input,select{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #222;
+background:#0a0a0a;
+color:#fff;
+outline:none;
+}
+
+/* Button */
+button{
+width:100%;
+padding:15px;
+background:#aa780b;
+border:none;
+color:#000;
+font-weight:600;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+margin-top:10px;
+}
+
+button:hover{
+opacity:.9;
+}
+
+
+.price-box{
+display:inline-block;
+padding:8px 148px;
+background:#0a9300;
+color:#000;
+font-weight:600;
+border-radius:10px;
+font-size:18px;
+margin-bottom:30px;
+}
+
+/* Navbar */
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+z-index:1000;
+border-bottom:1px solid #222;
+}
+
+/* اللوجو */
+.nav-logo{
+font-family:'Playfair Display',serif;
+color:#C9A227;
+font-size:22px;
+letter-spacing:4px;
+}
+
+/* اللينكات */
+.nav-links a{
+text-decoration:none;
+color:#aaa;
+font-size:13px;
+letter-spacing:2px;
+padding:8px 14px;
+border-radius:20px;
+transition:.3s;
+}
+
+.nav-links a:hover{
+background:#C9A227;
+color:#000;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="checkout-box">
+
+<h2>Complete Your Purchase</h2>
+<div class="price-box">
+$89
+</div>
+
+
+<!-- Images -->
+<div class="product-images">
+<img src="2.jpg">
+<img src="3.jpg">
+<img src="3.jpg">
+
+</div>
+
+<!-- Form -->
+<select>
+<option>Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<select>
+<option>Select Color</option>
+<option>Black</option>
+<option>White</option>
+<option>Gray</option>
+</select>
+
+<input type="text" placeholder="Your Full Name">
+<input type="tel" placeholder="Phone Number">
+<input type="text" placeholder="Address">
+
+<button onclick="buyNow()">Buy Now</button>
+
+</div>
+
+<script>
+function buyNow(){
+alert("Order placed successfully 🎉");
+}
+
+</script>
+
+</body>
+<div class="navbar">
+
+<div class="nav-logo">DELORA</div>
+
+<div class="nav-links">
+<a href="index.html">HOME</a>
+</div>
+
+</div>
+</html>

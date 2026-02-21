@@ -53,7 +53,7 @@ position: relative; z-index: 2500;
 .logo{
 justify-self:center;
 font-family:'Playfair Display',serif;
-font-size:20px;
+font-size:15px;
 color:#C9A227;
 letter-spacing:4px;
 position:relative;
@@ -717,5 +717,6 @@ font-size:17px;
     transform:translateY(-30px); /* يطلع لفوق */
   }
   
+
 
 </style>

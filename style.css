@@ -640,7 +640,7 @@ padding:20px 25px;   /* قلل الطول من فوق وتحت */
 }
 
 .flash-container{
-gap:50px;           /* قلل المسافات بين العناصر */
+gap:45px;           /* قلل المسافات بين العناصر */
 }
 
 .flash-left{
@@ -649,7 +649,7 @@ letter-spacing:1px;
 }
 
 .time-box span{
-font-size:25px;     /* صغر أرقام العداد */
+font-size:20px;     /* صغر أرقام العداد */
 }
 
 .time-box small{
@@ -662,7 +662,7 @@ font-size:18px;
 
 .flash-btn{
 padding:8px 16px;   /* صغر الزرار */
-font-size:17px;
+font-size:15px;
 }
 
 
@@ -690,15 +690,8 @@ font-size:17px;
   text-align:center;
 }
 
-.flash-timer{
-  justify-content:center;
-  margin:0 auto;
-}
 
-.flash-timer{
-  position:relative;
-  left:-8px;   /* عدل الرقم حسب ما يعجبك */
-}
+
   .buttons{
     flex-direction:column;
     align-items:center;

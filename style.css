@@ -635,50 +635,80 @@ font-size:16px;
      font-size:22px;
   }
 }
-/* =========================
-   FLASH TIMER
-   ========================= */
-
 .flash-sale-bar{
-  background:linear-gradient(90deg,#4b0404,#220404);
-  padding:10px 20px; /* ارتفاع الشريط */
+padding:20px 25px;   /* قلل الطول من فوق وتحت */
 }
 
 .flash-container{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:45px; /* المسافة بين العداد والزرار */
+gap:45px;           /* قلل المسافات بين العناصر */
 }
 
-.flash-timer{
-  display:flex;
-  align-items:center;
-  gap:15px;
+.flash-left{
+font-size:7px;     /* صغر حجم الخط */
+letter-spacing:1px;
 }
 
 .time-box span{
-  font-size:18px; /* حجم الأرقام */
-  font-weight:700;
+font-size:20px;     /* صغر أرقام العداد */
 }
 
 .time-box small{
-  font-size:9px; /* HRS MIN SEC */
+font-size:9px;
 }
 
 .dots{
-  font-size:18px; /* النقطتين */
-  color:#C9A227;
+font-size:18px;
 }
 
 .flash-btn{
-  background:#ff1e1e;
-  color:#fff;
-  border:none;
-  padding:8px 16px; /* حجم الزرار */
-  font-size:12px;
-  cursor:pointer;
+padding:8px 16px;   /* صغر الزرار */
+font-size:15px;
 }
+
+
+
+.time-box span{
+  font-size:20px;
+}
+
+.time-box small{
+  font-size:10px;
+}
+
+.dots{
+  font-size:20px;
+}
+
+.flash-btn{
+  font-size:13px;
+  padding:10px 12px;
+}
+@media(max-width:768px){
+
+ 
+
+  .flash-container{
+    flex-wrap:nowrap;          /* يمنع النزول سطر جديد */
+    justify-content:center;    /* يخليهم في النص */
+    gap:15px;                  /* مسافة صغيرة بينهم */
+  }
+
+  .flash-timer{
+    gap:8px;                   /* يقلل المسافات بين الأرقام */
+  }
+
+  .flash-btn{
+    padding:8px 12px;          /* يصغر الزرار عشان يساع */
+    font-size:12px;
+    white-space:nowrap;        /* يمنع الزرار ينزل سطر */
+  }
+
+}
+.flash-container{
+  justify-content:center;   /* يخليهم في النص */
+  text-align:center;
+}
+
 
 
   .buttons{
@@ -729,4 +759,3 @@ font-size:16px;
  .live-info{
     font-size:9px;
   }
-

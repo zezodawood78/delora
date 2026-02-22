@@ -4,17 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>COLLECTIONS — DELORA</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;padding-top:70px;}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#0a0a0a;
+  color:#fff;
+  overflow-x:hidden;
+  padding-top:70px;
+}
 
 /* Navbar */
-.navbar{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 80px;background:#000;z-index:1000;}
-.logo{font-family:'Playfair Display',serif;font-size:26px;color:#C9A227;letter-spacing:4px;}
-.nav-links{display:flex;gap:40px;}
-.nav-links a{text-decoration:none;color:#aaa;font-size:13px;letter-spacing:2px;transition:.3s;}
-.nav-links a:hover{color:#C9A227;}
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 80px;
+  background:#000;
+  z-index:1000;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  color:#C9A227;
+  letter-spacing:4px;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
 
 .nav-links a{
   text-decoration:none;
@@ -23,103 +51,131 @@ body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hid
   letter-spacing:2px;
   padding:8px 18px;
   border-radius:20px;
-
-  /* الإيفيكت الثابت */
   background:rgba(255,255,255,0.03);
   border:1px solid rgba(255,255,255,0.08);
-
-  transition:all .3s ease;
+  transition:.3s;
 }
 
-/* Hover بسيط جدا */
 .nav-links a:hover{
   background:rgba(201,162,39,0.08);
   border-color:#C9A227;
   color:#C9A227;
 }
+
 /* Hero */
 .hero{
-  height:91vh;
-  background-image:url('ch.png');
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center 30%;
+  height:90vh;
+  background:url('ch.png') no-repeat center/cover;
   display:flex;
   align-items:center;
   padding:0 80px;
-  position:relative;
 }
 
-.hero-content{max-width:700px;}
-.hero h1{font-family:'Playfair Display',serif;font-size:70px;line-height:1.1;}
+.hero-content{max-width:600px;}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:70px;
+}
+
 .hero h1 span{color:#C9A227;}
-.hero p{margin-top:15px;color:#bbb;font-size:18px;}
-.buttons{margin-top:35px;display:flex;gap:20px;}
-.btn-primary{background:#0c9300;color:#000;padding:15px 65px;border:none;cursor:pointer;font-weight:600;letter-spacing:2px;}
-.btn-outline{border:1px solid #444;background:transparent;color:#fff;padding:14px 40px;cursor:pointer;letter-spacing:2px;}
+
+.hero p{
+  margin-top:15px;
+  color:#bbb;
+  font-size:18px;
+}
+
+.btn-primary{
+  margin-top:30px;
+  background:#0c9300;
+  color:#000;
+  padding:15px 50px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
 
 /* Filters */
-.filters{display:flex;gap:20px;flex-wrap:wrap;margin:60px 80px;}
-.filters select{padding:10px 15px;border-radius:6px;background:#111;border:1px solid #222;color:#fff;cursor:pointer;}
+.filters{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:60px 80px;
+}
 
-/* Products Grid */
+.filters select{
+  padding:10px;
+  background:#111;
+  border:1px solid #222;
+  color:#fff;
+}
+
+/* Products */
 .products{padding:20px 80px;}
+
 .grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
+
 .card{
-  background:#111; 
-  padding:10px; /* خفف padding عشان الصورة أكبر */
-  border-radius:10px; /* أصغر قليل */
+  background:#111;
+  padding:12px;
+  border-radius:10px;
   transition:.3s;
-  position:relative;
-  overflow:hidden;
 }
-.card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.5);}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
 .card img{
   width:100%;
-  height:auto;  /* خلي الصورة كبيرة ومرنة */
   border-radius:8px;
-  margin-bottom:10px;
 }
-.price{color:#C9A227;font-size:16px;margin:5px 0;} /* نص أصغر */
-.old-price{text-decoration:line-through;color:#666;font-size:12px;} /* نص أصغر */
-.save{color:#00ff6a;font-size:12px;margin-bottom:5px;}
-.stock{color:#ff4d4d;font-size:12px;margin-bottom:5px;}
-.add-btn{width:100%;background:#C9A227;color:#000;border:none;padding:10px;cursor:pointer;font-weight:600;font-size:14px;}
-.badge-new{position:absolute;top:10px;left:10px;background:#C9A227;color:#000;font-size:10px;padding:4px 8px;border-radius:4px;letter-spacing:1px;}
-.badge-hot{position:absolute;top:10px;right:10px;background:#ff2e2e;color:#fff;font-size:10px;padding:4px 8px;border-radius:4px;letter-spacing:1px;}
 
-/* Cart Sidebar */
-.cart{position:fixed;right:-400px;top:0;width:350px;height:100%;background:#111;padding:30px;transition:.4s;overflow-y:auto;z-index:2000;}
-.cart.active{right:0;}
-.cart h2{margin-bottom:20px;}
-.cart-item{margin-bottom:10px;font-size:14px;}
-.total{margin-top:20px;font-weight:bold;}
-.progress{height:6px;background:#333;margin:15px 0;border-radius:4px;overflow:hidden;}
-.progress-bar{height:100%;background:#C9A227;width:0%;}
+.price{color:#C9A227;}
+.old-price{text-decoration:line-through;color:#666;font-size:12px;}
+.stock{color:#ff4d4d;font-size:12px;}
+
+.add-btn{
+  width:100%;
+  background:#C9A227;
+  color:#000;
+  border:none;
+  padding:10px;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.badge-new{
+  position:absolute;
+  background:#C9A227;
+  color:#000;
+  font-size:10px;
+  padding:4px 8px;
+}
+
+.badge-hot{
+  position:absolute;
+  right:10px;
+  background:#ff2e2e;
+  color:#fff;
+  font-size:10px;
+  padding:4px 8px;
+}
 
 /* Footer */
-.footer{background:#000;padding:40px;text-align:center;border-top:1px solid #222;}
-.footer-logo{font-family:'Playfair Display',serif;color:#C9A227;font-size:22px;letter-spacing:4px;margin-bottom:10px;}
-.footer p{color:#777;font-size:14px;}
-
-/* Responsive */
-@media(max-width:900px){
-  .hero h1{font-size:50px;}
-  .navbar{padding:0 20px;}
-  .hero{padding:0 20px;}
-  .products{padding:40px 20px;}
-  .grid{grid-template-columns:repeat(3,1fr);} /* 3 أعمدة دايمًا */
-}
-@media(max-width:600px){
-  .grid{grid-template-columns:repeat(3,1fr);} /* 3 أعمدة دايمًا */
+.footer{
+  background:#000;
+  padding:30px;
+  text-align:center;
+  margin-top:40px;
 }
 
-/* ================= NAVBAR MOBILE FIX ================= */
-
+/* Mobile */
 @media(max-width:768px){
 
   .navbar{
@@ -128,34 +184,44 @@ body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hid
 
   .logo{
     font-size:20px;
-    letter-spacing:2px;
   }
 
-  .nav-links{
-    gap:15px;
+  .hero{
+    padding:0 20px;
   }
 
-  .nav-links a{
-    font-size:11px;
+  .hero h1{
+    font-size:38px;
   }
 
-  #cartBtn{
-    font-size:18px;
+  .hero p{
+    font-size:14px;
+  }
+
+  .btn-primary{
+    padding:12px 20px;
+    font-size:12px;
+  }
+
+  .filters{
+    margin:30px 20px;
+  }
+
+  .products{
+    padding:20px;
   }
 
 }
 </style>
 </head>
+
 <body>
 
 <div class="navbar">
   <div class="logo">DELORA</div>
   <div class="nav-links">
-   
     <a href="index.html">HOME</a>
-
-<a href="sale.html">SALE <span class="hot-badge">HOT</span></a>
-
+    <a href="sale.html">SALE</a>
   </div>
 </div>
 
@@ -163,211 +229,54 @@ body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hid
   <div class="hero-content">
     <h1>COLLEC<span>TIONS</span></h1>
     <p>Discover the latest drops crafted for bold style.</p>
-    <div class="buttons">
-      <button class="btn-primary">Express yourself through your outfit</button>
-    </div>
+    <button class="btn-primary">Express yourself</button>
   </div>
 </section>
 
-<!-- Filters -->
 <div class="filters">
-  <select id="filterType">
-    <option value="all">All Types</option>
-    <option value="jackets">Jackets</option>
-    <option value="hoodies">Hoodies</option>
-    <option value="pants">Pants</option>
-  </select>
-  <select id="sortPrice">
-    <option value="default">Sort By</option>
-    <option value="low">Price: Low → High</option>
-    <option value="high">Price: High → Low</option>
-    <option value="new">Newest</option>
+  <select>
+    <option>All Types</option>
+    <option>Jackets</option>
+    <option>Hoodies</option>
   </select>
 </div>
 
 <section class="products">
-  <div class="grid" id="productGrid">
-    <div class="card" data-type="jackets">
-      <div class="badge-new">NEW</div>
-      <img src="2.jpg" loading="lazy">
+  <div class="grid">
+
+    <div class="card">
+      <img src="2.jpg">
       <h3>Midnight Jacket</h3>
       <div class="old-price">$349</div>
       <div class="price">$149</div>
       <div class="stock">Only 3 left!</div>
-      <button class="add-btn" data-name="Midnight Jacket" data-price="149">Buy Now</button>
+      <button class="add-btn">Buy Now</button>
     </div>
 
-    <div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
+    <div class="card">
+      <img src="3.jpg">
       <h3>Shadow Hoodie</h3>
       <div class="old-price">$249</div>
       <div class="price">$99</div>
       <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
+      <button class="add-btn">Buy Now</button>
     </div>
 
-    <div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
+    <div class="card">
+      <img src="3.jpg">
       <h3>Shadow Hoodie</h3>
       <div class="old-price">$249</div>
       <div class="price">$99</div>
       <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
-    </div>
-    <div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
+      <button class="add-btn">Buy Now</button>
     </div>
 
-    <div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
-    </div>
-
-    <div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
-    </div>
-
-
-
-    <div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
-    </div>
-
-
-
-    <div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
-    </div>
-
-    <div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
-    </div>
-
-<div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
-    </div>
-
-    <div class="card" data-type="hoodies">
-      <div class="badge-hot">HOT</div>
-      <img src="3.jpg" loading="lazy">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn" data-name="Shadow Hoodie" data-price="99">Buy Now</button>
-    </div>
-
-    <div class="card" data-type="pants">
-      <img src="4.jpg" loading="lazy">
-      <h3>Urban Pants</h3>
-      <div class="old-price">$199</div>
-      <div class="price">$89</div>
-      <div class="stock">Only 4 left!</div>
-      <button class="add-btn" data-name="Urban Pants" data-price="89">Buy Now</button>
-    </div>
   </div>
 </section>
 
-<!-- Cart Sidebar -->
-<div class="cart" id="cart">
-  <h2>Your Cart</h2>
-  <div id="cartItems"></div>
-  <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-  <p id="shippingMsg">Add $200 more for FREE shipping</p>
-  <div class="total">Total: $<span id="total">0</span></div>
-</div>
-
 <div class="footer">
-  <div class="footer-logo">DELORA</div>
-  <p>© 2026 DELORA. All Rights Reserved.</p>
+  <p>© 2026 DELORA</p>
 </div>
-
-<script>
-// Cart Functionality
-let cart=[];
-const cartBtn=document.getElementById("cartBtn");
-const cartEl=document.getElementById("cart");
-cartBtn.onclick=()=>cartEl.classList.toggle("active");
-document.querySelectorAll(".add-btn").forEach(btn=>{
-  btn.onclick=()=>{
-    let name=btn.dataset.name;
-    let price=parseFloat(btn.dataset.price);
-    cart.push({name,price});
-    updateCart();
-  };
-});
-function updateCart(){
-  let items=document.getElementById("cartItems");
-  let total=0;
-  items.innerHTML="";
-  cart.forEach(i=>{total+=i.price;items.innerHTML+=`<div class='cart-item'>${i.name} - $${i.price}</div>`;});
-  document.getElementById("total").innerText=total;
-  let percent=Math.min((total/200)*100,100);
-  document.getElementById("progressBar").style.width=percent+"%";
-  document.getElementById("shippingMsg").innerText=total>=200?"🎉 You unlocked FREE shipping!":`Add $${(200-total).toFixed(2)} more for FREE shipping`;
-}
-
-// Filter & Sort
-const filterType=document.getElementById("filterType");
-const sortPrice=document.getElementById("sortPrice");
-const productGrid=document.getElementById("productGrid");
-filterType.onchange=applyFilterSort;
-sortPrice.onchange=applyFilterSort;
-function applyFilterSort(){
-  let type=filterType.value;
-  let sort=sortPrice.value;
-  let cards=Array.from(productGrid.children);
-  cards.forEach(card=>{card.style.display=(type==='all'||card.dataset.type===type)?'block':'none';});
-  cards.sort((a,b)=>{
-    if(sort==='low') return parseFloat(a.querySelector('.price').innerText.slice(1))-parseFloat(b.querySelector('.price').innerText.slice(1));
-    if(sort==='high') return parseFloat(b.querySelector('.price').innerText.slice(1))-parseFloat(a.querySelector('.price').innerText.slice(1));
-    return 0;
-  }).forEach(c=>productGrid.appendChild(c));
-}
-</script>
 
 </body>
 </html>

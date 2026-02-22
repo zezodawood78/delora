@@ -150,23 +150,6 @@ body{
   margin-top:10px;
 }
 
-.badge-new{
-  position:absolute;
-  background:#C9A227;
-  color:#000;
-  font-size:10px;
-  padding:4px 8px;
-}
-
-.badge-hot{
-  position:absolute;
-  right:10px;
-  background:#ff2e2e;
-  color:#fff;
-  font-size:10px;
-  padding:4px 8px;
-}
-
 /* Footer */
 .footer{
   background:#000;
@@ -176,49 +159,20 @@ body{
 }
 
 /* Mobile */
-/* Mobile */
 @media(max-width:768px){
+  .navbar{padding:15px 20px;}
+  .logo{font-size:20px;}
+  .hero{padding:0 20px;}
+  .hero h1{font-size:38px;}
+  .hero p{font-size:14px;}
+  .btn-primary{padding:12px 20px;font-size:12px;}
+  .filters{margin:30px 20px;}
+  .products{padding:20px;}
 
-  .navbar{
-    padding:15px 20px;
-  }
-
-  .logo{
-    font-size:20px;
-  }
-
-  .hero{
-    padding:0 20px;
-  }
-
-  .hero h1{
-    font-size:38px;
-  }
-
-  .hero p{
-    font-size:14px;
-  }
-
-  .btn-primary{
-    padding:12px 20px;
-    font-size:12px;
-  }
-
-  .filters{
-    margin:30px 20px;
-  }
-
-  .products{
-    padding:20px;
-  }
-
-  /* 👇 ده التعديل المهم */
   .grid{
     grid-template-columns:repeat(2,1fr);
   }
-
 }
-
 </style>
 </head>
 
@@ -236,22 +190,22 @@ body{
   <div class="hero-content">
     <h1>COLLEC<span>TIONS</span></h1>
     <p>Discover the latest drops crafted for bold style.</p>
-    <button class="btn-primary">Express yourself</button>
+    <button class="btn-primary">افضل اختيار ليك</button>
   </div>
 </section>
 
 <div class="filters">
-  <select>
-    <option>All Types</option>
-    <option>Jackets</option>
-    <option>Hoodies</option>
+  <select id="filter">
+    <option value="all">All Types</option>
+    <option value="jacket">Jackets</option>
+    <option value="hoodie">Hoodies</option>
   </select>
 </div>
 
 <section class="products">
   <div class="grid">
 
-    <div class="card">
+    <div class="card" data-type="jacket">
       <img src="2.jpg">
       <h3>Midnight Jacket</h3>
       <div class="old-price">$349</div>
@@ -260,7 +214,7 @@ body{
       <button class="add-btn">Buy Now</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-type="hoodie">
       <img src="3.jpg">
       <h3>Shadow Hoodie</h3>
       <div class="old-price">$249</div>
@@ -269,130 +223,12 @@ body{
       <button class="add-btn">Buy Now</button>
     </div>
 
-    <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
-
-
-     <div class="card">
-      <img src="3.jpg">
-      <h3>Shadow Hoodie</h3>
-      <div class="old-price">$249</div>
-      <div class="price">$99</div>
-      <div class="stock">Only 5 left!</div>
-      <button class="add-btn">Buy Now</button>
-    </div>
+    <!-- باقي المنتجات زي ما هي -->
+    <div class="card" data-type="hoodie"><img src="3.jpg"><h3>Shadow Hoodie</h3><div class="old-price">$249</div><div class="price">$99</div><div class="stock">Only 5 left!</div><button class="add-btn">Buy Now</button></div>
+    <div class="card" data-type="hoodie"><img src="3.jpg"><h3>Shadow Hoodie</h3><div class="old-price">$249</div><div class="price">$99</div><div class="stock">Only 5 left!</div><button class="add-btn">Buy Now</button></div>
+    <div class="card" data-type="hoodie"><img src="3.jpg"><h3>Shadow Hoodie</h3><div class="old-price">$249</div><div class="price">$99</div><div class="stock">Only 5 left!</div><button class="add-btn">Buy Now</button></div>
+    <div class="card" data-type="hoodie"><img src="3.jpg"><h3>Shadow Hoodie</h3><div class="old-price">$249</div><div class="price">$99</div><div class="stock">Only 5 left!</div><button class="add-btn">Buy Now</button></div>
+    <div class="card" data-type="hoodie"><img src="3.jpg"><h3>Shadow Hoodie</h3><div class="old-price">$249</div><div class="price">$99</div><div class="stock">Only 5 left!</div><button class="add-btn">Buy Now</button></div>
 
   </div>
 </section>
@@ -401,6 +237,22 @@ body{
   <p>© 2026 DELORA</p>
 </div>
 
+<script>
+const filter = document.getElementById("filter");
+const cards = document.querySelectorAll(".card");
+
+filter.addEventListener("change", () => {
+  const value = filter.value;
+
+  cards.forEach(card => {
+    if (value === "all" || card.dataset.type === value) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+</script>
+
 </body>
 </html>
-

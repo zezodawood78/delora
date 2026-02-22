@@ -22,15 +22,13 @@ setInterval(() => {
 }, 4000);
 
 // ===============================
-// Cart System
+// Cart Icon Disabled (شكل فقط)
 // ===============================
-let cart = [];
-
 const cartBtn = document.getElementById("cartBtn");
-const cartEl = document.getElementById("cart");
 
-if (cartBtn && cartEl) {
-  cartBtn.onclick = () => cartEl.classList.toggle("active");
+if (cartBtn) {
+  cartBtn.style.pointerEvents = "none";  // يمنع الضغط
+  cartBtn.style.cursor = "default";      // يشيل شكل اليد
 }
 
 document.querySelectorAll(".add-btn").forEach((btn) => {

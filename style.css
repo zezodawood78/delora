@@ -641,7 +641,7 @@ font-size:16px;
 
 .flash-sale-bar{
   background:linear-gradient(90deg,#4b0404,#220404);
-  padding:15px 25px; /* ارتفاع الشريط */
+  padding:10px 20px; /* ارتفاع الشريط */
 }
 
 .flash-container{
@@ -658,12 +658,12 @@ font-size:16px;
 }
 
 .time-box span{
-  font-size:20px; /* حجم الأرقام */
-  font-weight:800;
+  font-size:18px; /* حجم الأرقام */
+  font-weight:700;
 }
 
 .time-box small{
-  font-size:10px; /* HRS MIN SEC */
+  font-size:9px; /* HRS MIN SEC */
 }
 
 .dots{
@@ -676,7 +676,7 @@ font-size:16px;
   color:#fff;
   border:none;
   padding:8px 16px; /* حجم الزرار */
-  font-size:13px;
+  font-size:12px;
   cursor:pointer;
 }
 
@@ -729,3 +729,4 @@ font-size:16px;
  .live-info{
     font-size:9px;
   }
+
